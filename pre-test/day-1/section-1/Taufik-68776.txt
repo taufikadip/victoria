@@ -1,0 +1,25 @@
+1. C
+2. C
+3. A
+4. B
+5. C
+6. C
+7. A
+8. B
+9. C
+10. A
+11. B
+12. A
+13. A
+14. B
+15. A
+
+Short Answer
+16. IDK
+17. == digunakan untuk membandingkan dua value, .equals()
+18. IDK
+19. for = digunakan untuk looping dengan memberikan kondisional dan tertentu,
+    while = digunakan untuk looping
+    do-while = digunakan untuk looping dengan minimal satu perintah dikerjakan
+    foreach = looping dengan memeriksa satu persatu kondisi
+20. IDK
