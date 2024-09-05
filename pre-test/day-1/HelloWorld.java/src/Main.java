@@ -96,5 +96,14 @@ public class Main {
             }
             System.out.println(checkAngka);
         }
+
+        //print 1 - 50 jika ada odd print angkanya
+        for (int i = 1; i <= 50; i++){
+            if (i % 2 == 1) {
+                System.out.println(i );
+            } else {
+                System.out.println("even ");
+            }
+        }
     }
 }
