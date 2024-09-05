@@ -7,10 +7,13 @@ public class Main {
 //        Cat myCat = new Cat();
 //            myCat.name = "AB";
 //            myCat.species = "Dog";
-        Dog myDog = new Dog();
-        myDog.makesound();
+//        Dog myDog = new Dog();
+//        myDog.makesound();
+//
+//        Cat myCat = new Cat();
+//        myCat.makesound();
 
-        Cat myCat = new Cat();
-        myCat.makesound();
+        Animal myDog = new Dog();
+        myDog.sound();
     }
 }
