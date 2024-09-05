@@ -1,39 +1,57 @@
 public class BankAccount {
+    // Private fields untuk encapsulation
     private String accountNumber;
     private double balance;
     private String accountHolder;
-    public int amount;
 
-    public BankAccount(String accountNumber, String accountHolder){
+    // Constructor untuk menginisialisasi accountNumber dan accountHolder, balance diinisialisasi ke 0.0
+    public BankAccount(String accountNumber, String accountHolder) {
         this.accountNumber = accountNumber;
         this.accountHolder = accountHolder;
-        balance = 0.0;
+        this.balance = 0.0;
     }
 
-    public String getAccountNumber(){
-        return accountNumber;
-    }
-
-    public double getBalance(){
-        return balance;
-    }
-
-    public String getAccountHolder(){
-        return accountHolder;
-    }
-
-    public void deposit(double amount){
-        if (balance > 0){
+    // Method untuk menambahkan uang ke saldo (balance)
+    public void deposit(double amount) {
+        if (amount > 0) {
             balance += amount;
+            System.out.println("Berhasil deposit sebesar: " + amount);
+        } else {
+            System.out.println("Jumlah deposit harus positif.");
         }
     }
 
-    public void int withdraw(double amount){
-        if (balance <= amount)
+    // Method untuk menarik uang dari saldo (balance) jika jumlahnya tidak lebih dari saldo saat ini
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
             balance -= amount;
+            System.out.println("Berhasil menarik sebesar: " + amount);
+        } else if (amount > balance) {
+            System.out.println("Penarikan gagal. Saldo tidak cukup.");
+        } else {
+            System.out.println("Jumlah penarikan harus positif.");
+        }
     }
 
+    // Method untuk mendapatkan saldo saat ini
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method untuk mendapatkan nama pemilik akun
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    // Method untuk mengubah nama pemilik akun
     public void setAccountHolder(String accountHolder) {
         this.accountHolder = accountHolder;
+    }
+
+    // Optional: Menampilkan informasi akun
+    public void printAccountDetails() {
+        System.out.println("Nomor Akun: " + accountNumber);
+        System.out.println("Pemilik Akun: " + accountHolder);
+        System.out.println("Saldo Saat Ini: " + balance);
     }
 }

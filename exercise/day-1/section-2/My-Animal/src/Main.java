@@ -13,7 +13,8 @@ public class Main {
 //        Cat myCat = new Cat();
 //        myCat.makesound();
 
-        Animal myDog = new Dog();
+        Dog myDog = new Dog();
         myDog.sound();
+        myDog.sleep();
     }
 }

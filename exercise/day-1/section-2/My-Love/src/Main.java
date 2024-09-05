@@ -1,9 +1,27 @@
 public class Main {
     public static void main(String[] args) {
-        BankAccount account = new BankAccount("5544", "Kevin");
-        account.deposit(500);
-        account.withdraw(100);
-        System.out.println("Account Holder : " + account.setAccountHolder(););
-        System.out.println("Current balance : " + account.getBalance());
+        // Membuat objek BankAccount
+        BankAccount account1 = new BankAccount("5544", "Kevin");
+
+        // Menampilkan informasi akun
+        account1.printAccountDetails();
+
+        // Melakukan deposit
+        account1.deposit(5000.0);
+
+        // Menampilkan saldo setelah deposit
+        System.out.println("Saldo setelah deposit: " + account1.getBalance());
+
+        // Melakukan penarikan
+        account1.withdraw(2000.0);
+
+        // Menampilkan saldo setelah penarikan
+        System.out.println("Saldo setelah penarikan: " + account1.getBalance());
+
+        // Mengganti nama pemilik akun
+        account1.setAccountHolder("Zulkarta");
+
+        // Menampilkan informasi akun setelah perubahan nama
+        account1.printAccountDetails();
     }
 }
