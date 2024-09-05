@@ -141,11 +141,19 @@ public class Main {
 //        }
 
         //continue
-        for (int i = 1; i <= 30 ; i++) {
-            if (i % 2 == 0){
-                continue;
-            }
-            System.out.println(i);
+//        for (int i = 1; i <= 30 ; i++) {
+//            if (i % 2 == 0){
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+        //faktorial
+        int myNum = 8;
+        int result = 1;
+        for (int i = 1; i <= myNum ; i++) {
+            result = result*i;
         }
+        System.out.println(result);
     }
 }
