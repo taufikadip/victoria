@@ -49,24 +49,23 @@ public class Main {
         System.out.println("Apakah 61 genap? " + false);
 
         //if else bilangan ganjil genap
-        Integer [] myNumber = {10,75,76,47};
-
-        String checkNumber;
-        for (Integer myNum : myNumber) {
-            //cek apakah angka lebih besar dari 50 dan even
-            if (myNum > 50 && myNum % 2 == 0) {
-                System.out.println("angka lebih besar dari 50 dan even");
-                //cek apakah angka lebih besar dari 50 dan odd
-            } else if (myNum > 50 && myNum % 2 == 1) {
-                System.out.println("angka lebih besar dari 50 dan odd");
-                //cek apakah angka lebih kecil dari 50 dan even
-            } else if (myNum < 50 && myNum % 2 == 0) {
-                System.out.println("angka lebih besar dari 50 dan even");
-                //cek apakah angka lebih kecil dari 50 dan odd
-            } else if (myNum < 50 && myNum % 2 == 1) {
-                System.out.println("angka lebih besar dari 50 dan odd");
-            }
-        }
+//        Integer [] myNumber = {10,75,76,47};
+//
+//        for (Integer myNum : myNumber) {
+//            //cek apakah angka lebih besar dari 50 dan even
+//            if (myNum > 50 && myNum % 2 == 0) {
+//                System.out.println("angka lebih besar dari 50 dan even");
+//                //cek apakah angka lebih besar dari 50 dan odd
+//            } else if (myNum > 50 && myNum % 2 == 1) {
+//                System.out.println("angka lebih besar dari 50 dan odd");
+//                //cek apakah angka lebih kecil dari 50 dan even
+//            } else if (myNum < 50 && myNum % 2 == 0) {
+//                System.out.println("angka lebih besar dari 50 dan even");
+//                //cek apakah angka lebih kecil dari 50 dan odd
+//            } else if (myNum < 50 && myNum % 2 == 1) {
+//                System.out.println("angka lebih besar dari 50 dan odd");
+//            }
+//        }
 
 //        if (myNumber > 50){
 //            System.out.println("Angka lebih besar dari 50");
@@ -74,43 +73,43 @@ public class Main {
 //                System.out.println();
 //            }
 
-//        //day nya 1,2,3,5
-//        Integer [] day = {1,2,3,5};
-//
-//        String dayName;
-//        for (Integer myNum : day){
-//            switch (myNum) {
-//                case 1: dayName = "Sunday"; break;
-//                case 2: dayName = "Monday"; break;
-//                case 3: dayName = "Tuesday"; break;
-//                default: dayName = "Invalid day"; break;
+        //day nya 1,2,3,5
+        Integer [] day = {1,2,3,5};
+
+        String dayName;
+        for (Integer myNum : day){
+            switch (myNum) {
+                case 1: dayName = "Sunday"; break;
+                case 2: dayName = "Monday"; break;
+                case 3: dayName = "Tuesday"; break;
+                default: dayName = "Invalid day"; break;
+            }
+        System.out.println(dayName);
+        }
+
+        //Switch case odd even
+        Integer [] angka = {10,75,76,47};
+
+        String checkAngka;
+        for (Integer myAngka : angka){
+            switch (myAngka % 2){
+                case 0: checkAngka = "Genap"; break;
+                case 1: checkAngka = "Ganjil"; break;
+                default: checkAngka = "Invalid Number"; break;
+            }
+            System.out.println(checkAngka);
+        }
+
+//        //print 1 - 50 jika ada odd print angkanya
+//        for (int i = 1; i <= 50; i++){
+//            if (i % 2 == 1) {
+//                System.out.println(i );
+//            } else {
+//                System.out.println("even ");
 //            }
-//        System.out.println(dayName);
 //        }
-//
-//        //Switch case odd even
-//        Integer [] angka = {10,75,76,47};
-//
-//        String checkAngka;
-//        for (Integer myAngka : angka){
-//            switch (myAngka % 2){
-//                case 0: checkAngka = "Genap"; break;
-//                case 1: checkAngka = "Ganjil"; break;
-//                default: checkAngka = "Invalid Number"; break;
-//            }
-//            System.out.println(checkAngka);
-//        }
-//
-////        //print 1 - 50 jika ada odd print angkanya
-////        for (int i = 1; i <= 50; i++){
-////            if (i % 2 == 1) {
-////                System.out.println(i );
-////            } else {
-////                System.out.println("even ");
-////            }
-////        }
-//
-//        //while loops odd even
+
+        //while loops odd even
 //        int i = 1;
 //        while (i <= 50){
 //            if (i % 2 == 1) {
@@ -120,5 +119,25 @@ public class Main {
 //            }
 //            i++;
 //        }
+
+        //do while loops
+//        int i = 1;
+//        do {
+//            if (i % 2 == 1) {
+//                System.out.println(i );
+//            } else {
+//                System.out.println("even ");
+//            }
+//            i++;
+//        } while (i <= 50);
+
+        //break
+        for (int i = 1; i <= 50; i++){
+            if (i % 15 == 0) {
+                break;
+            } else {
+                System.out.println(i);
+            }
+        }
     }
 }
