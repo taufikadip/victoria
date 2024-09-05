@@ -83,5 +83,18 @@ public class Main {
             }
         System.out.println(dayName);
         }
+
+        //Switch case odd even
+        Integer [] angka = {10,75,76,47};
+
+        String checkAngka;
+        for (Integer myAngka : angka){
+            switch (myAngka % 2){
+                case 0: checkAngka = "Genap"; break;
+                case 1: checkAngka = "Ganjil"; break;
+                default: checkAngka = "Invalid Number"; break;
+            }
+            System.out.println(checkAngka);
+        }
     }
 }
