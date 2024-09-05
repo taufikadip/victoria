@@ -42,5 +42,10 @@ public class Main {
 
         System.out.println(luaslingkaran1);
         System.out.println(luaslingkaran2);
+
+        //bilangan ganji genap
+        int modulus = 61 % 2;
+        System.out.println(modulus);
+        System.out.println("Apakah 61 genap? " + false);
     }
 }
