@@ -47,5 +47,41 @@ public class Main {
         int modulus = 61 % 2;
         System.out.println(modulus);
         System.out.println("Apakah 61 genap? " + false);
+
+        //if else bilangan ganjil genap
+        int myNumber = 10;
+//
+//        //cek apakah angka lebih besar dari 50 dan even
+//        if (myNumber > 50 && myNumber % 2 == 0) {
+//            System.out.println("angka lebih besar dari 50 dan even");
+//            //cek apakah angka lebih besar dari 50 dan odd
+//        } else if (myNumber > 50 && myNumber % 2  == 1) {
+//            System.out.println("angka lebih besar dari 50 dan odd");
+//            //cek apakah angka lebih kecil dari 50 dan even
+//        } else if (myNumber < 50 && myNumber % 2 == 0) {
+//            System.out.println("angka lebih besar dari 50 dan even");
+//            //cek apakah angka lebih kecil dari 50 dan odd
+//        } else if (myNumber < 50 && myNumber % 2 == 1) {
+//            System.out.println("angka lebih besar dari 50 dan odd");
+
+//        if (myNumber > 50){
+//            System.out.println("Angka lebih besar dari 50");
+//            if (myNumber%2 == 0){
+//                System.out.println();
+//            }
+
+        //day nya 1,2,3,5
+        Integer [] day = {1,2,3,5};
+
+        String dayName;
+        for (Integer myNum : day){
+            switch (myNum) {
+                case 1: dayName = "Sunday"; break;
+                case 2: dayName = "Monday"; break;
+                case 3: dayName = "Tuesday"; break;
+                default: dayName = "Invalid day"; break;
+            }
+        System.out.println(dayName);
+        }
     }
 }
