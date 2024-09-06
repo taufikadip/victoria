@@ -22,38 +22,51 @@ public class FirstApplication {
 		}
 
 	@GetMapping
-//	public ArrayList<GetAssetResponse> getAssets(){
-//		ArrayList<GetAssetResponse> list = new ArrayList<>();
-//		asset.add(GetAssetResponse).builder().
-//		GetAssetResponse asset1 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
-//		GetAssetResponse asset2 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
-//		list.add(asset1);
-//		list.add(asset2);
-//		return list;
-//	}
+	public ArrayList<GetAssetResponse> getAssets(){
+		ArrayList<GetAssetResponse> list = new ArrayList<>();
+		GetAssetResponse asset1 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
+		GetAssetResponse asset2 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
+		list.add(asset1);
+		list.add(asset2);
+		return list;
+	}
 
 	@GetMapping("/users")
 	public List<String> getUser(){
 		return List.of("Karta", "Kevin", "Bram");
 	}
 
-	@GetMapping("/assets/{id}")
-	public GetAssetResponse getAssetbyId(
-			@PathVariable Long id
+//	@GetMapping("/assets/{id}")
+//	public GetAssetResponse getAssetbyId(
+//			@PathVariable Long id
+//
+//	)
 
-	) {
+	@GetMapping("/assets/{id}")
+	public ArrayList<GetAssetResponse> getAssetbyId(
+			@PathVariable Long id
+	)
+	{
+		ArrayList<GetAssetResponse> list = new ArrayList<>();
 		List<GetAssetResponse> asset = new ArrayList<>();
 		asset.add(GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build());
 		asset.add(GetAssetResponse.builder().id(2L).name("John Doe 2").type("Laki laki").build());
 		asset.add(GetAssetResponse.builder().id(3L).name("John Doe 3").type("Laki laki").build());
 		asset.add(GetAssetResponse.builder().id(4L).name("John Doe 4").type("Laki laki").build());
-		for (int i = 0; i < asset.size(); i++){
-			if (asset.get(i).getId().equals(id)){
-				return asset.get(i);
+		asset.add(GetAssetResponse.builder().id(5L).name("John Doe 5").type("Laki laki").build());
+//		for (int i = 0; i < asset.size(); i++){
+//			if (asset.get(i).getId().equals(id)){
+//				return asset.get(i);
+//			}
+//		}
+		for (GetAssetResponse getAssetResponse : asset){
+			if (getAssetResponse.getId() >= id ) {
+				list.add(getAssetResponse);
 			}
 		}
-		return null;
+		return list;
 	}
+
 //	public GetAssetResponse getAssetbyId(
 //			PathVariable Long id
 //	){
