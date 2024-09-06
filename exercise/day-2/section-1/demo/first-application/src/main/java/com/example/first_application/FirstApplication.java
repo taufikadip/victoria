@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.reflect.Array;
@@ -66,6 +67,14 @@ public class FirstApplication {
 		}
 		return list;
 	}
+
+//	@GetMapping("/calculator/add")
+//	public String getAdd(
+//			@RequestParam(name = "panjang") int panjang,
+//			@RequestParam(name = "lebar", required = false) int lebar
+//	){
+//		return String.valueOf(panjang + lebar);
+//	}
 
 //	public GetAssetResponse getAssetbyId(
 //			PathVariable Long id
