@@ -1,0 +1,50 @@
+1. C
+2. B
+3. B
+4. B
+5. C
+6. B
+7. B
+8.
+9. A
+10. B
+
+1. False
+2. False
+3. True
+4. False
+5. True
+
+1. REST API didasarkan pada prinsip arsitektur REST,
+   sedangkan RESTful API adalah jenis REST API yang mengikuti
+   serangkaian batasan yang membuatnya lebih mudah digunakan.
+   1. Klien mengirimkan permintaan ke server.
+   2. Server mengautentikasi klien dan mengonfirmasi bahwa klien memiliki hak untuk membuat permintaan.
+   3. Server menerima permintaan dan memproses secara internal.
+   4. Server mengembalikan respons kepada klien.
+2. contoh pada pengelolaan user :
+   1. GET: Mengambil data user.
+   2. POST: Menambahkan user baru.
+   3. PUT: Memperbarui seluruh informasi user.
+   4. DELETE: Menghapus user.
+3. Spring MVC adalah pola arsitektur yang kuat yang membantu menyusun kode,
+   membuatnya lebih teratur, mudah dipelihara, dan dapat diskalakan.
+   kemudian springboot menyederhanakannya dengan kerangka kerja web Java berbasis layanan mikro open-source
+   yang ditawarkan oleh Spring.
+4. @RequestMapping berperan untuk memetakan permintaan ke method pengontrol.
+   Anotasi ini memiliki berbagai atribut yang dapat dicocokkan berdasarkan URL,
+   metode HTTP, parameter permintaan, header, dan jenis media.
+5.
+6.
+7. dengan menambahkan beberapa parameter untuk validasi, contohnya berikut :
+   @Size(min = 3, max = 50, message = "Name must have at least 3 characters and maximum 50 characters")
+   private String name;
+8. RequestBody, digunakan untuk mengekstrak data isi permintaan HTTP, biasanya dalam format JSON atau XML, dan melakukan deserialisasi ke dalam objek Java.
+   ResponseBody, memberi tahu pengontrol bahwa objek yang dikembalikan secara otomatis diserialisasikan ke dalam JSON dan diteruskan kembali ke objek HttpResponse.
+9.
+10.
+11. CORS adalah singkatan dari Cross Origin Resource Sharing, yaitu kebijakan keamanan yang diterapkan oleh browser web untuk melindungi pengguna dari serangan lintas domain (cross-domain attacks),
+    untuk mengatasinya, dapat menggunakan @CorsOrigin
+12.
+13. Statelessness dalam REST tidak memaintain seluruh informasi yang ada dari user,
+    sehingga lebih baik dalam scalability karena tidak perlu menggunakan banyak resource.
