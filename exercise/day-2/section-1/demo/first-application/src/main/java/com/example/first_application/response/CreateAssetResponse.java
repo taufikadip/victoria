@@ -16,12 +16,12 @@ public class CreateAssetResponse {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("type")
-    private String type;
-
-    @JsonProperty("address")
-    private String address;
-
-    @JsonProperty("phone")
-    private Long phone;
+//    @JsonProperty("type")
+//    private String type;
+//
+//    @JsonProperty("address")
+//    private String address;
+//
+//    @JsonProperty("phone")
+//    private Long phone;
 }

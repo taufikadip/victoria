@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Builder
 @RestController
 @SpringBootApplication
 public class FirstApplication {
+
+	//buat list untuk menampung data
+	private List<CreateAssetResponse> assets = new ArrayList<>();
 
 	public static void main(String[] args) {
 		SpringApplication.run(FirstApplication.class, args);
@@ -174,10 +178,8 @@ public class FirstApplication {
 //		return new ResponseEntity<>(asset, HttpStatus.OK);
 //	}
 
-	//buat list untuk menampung data
-	private List<CreateAssetResponse> assets = new ArrayList<>();
 
-	@PatchMapping("/assets")
+	@PostMapping("/assets")
 	public ResponseEntity<List<CreateAssetResponse>> createAsset(
 			@RequestBody CreateAssetRequest request) {
 
@@ -194,7 +196,7 @@ public class FirstApplication {
 
 		//check
 		for (CreateAssetResponse asset : assets) {
-			if (asset.getId()==id){
+			if (asset.getId()==id) {
 				asset.setName(request.getName());
 			}
 		}
