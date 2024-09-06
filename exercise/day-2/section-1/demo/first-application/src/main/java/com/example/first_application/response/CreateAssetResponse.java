@@ -9,6 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CreateAssetResponse {
+
     @JsonProperty("id")
     private Long id;
 

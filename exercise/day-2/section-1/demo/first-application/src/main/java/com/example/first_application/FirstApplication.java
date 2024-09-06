@@ -20,10 +20,10 @@ public class FirstApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FirstApplication.class, args);
-		}
+	}
 
 	@GetMapping
-	public ArrayList<GetAssetResponse> getAssets(){
+	public ArrayList<GetAssetResponse> getAssets() {
 		ArrayList<GetAssetResponse> list = new ArrayList<>();
 		GetAssetResponse asset1 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
 		GetAssetResponse asset2 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
@@ -33,7 +33,7 @@ public class FirstApplication {
 	}
 
 	@GetMapping("/users")
-	public List<String> getUser(){
+	public List<String> getUser() {
 		return List.of("Karta", "Kevin", "Bram");
 	}
 
@@ -93,8 +93,7 @@ public class FirstApplication {
 			@RequestParam(name = "page", defaultValue = "1") int page,
 			@RequestParam(name = "size", defaultValue = "1") int size
 //			@RequestParam(name = "lebar", required = false) int lebar
-	)
-	{
+	) {
 		List<GetAssetResponse> asset = new ArrayList<>();
 		asset.add(GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build());
 		asset.add(GetAssetResponse.builder().id(2L).name("John Doe 2").type("Laki laki").build());
@@ -102,11 +101,11 @@ public class FirstApplication {
 		asset.add(GetAssetResponse.builder().id(4L).name("John Doe 4").type("Laki laki").build());
 		asset.add(GetAssetResponse.builder().id(5L).name("John Doe 5").type("Laki laki").build());
 
-		int i = ((page-1) * size);
+		int i = ((page - 1) * size);
 		int start = i;
 		List<GetAssetResponse> tampung = new ArrayList<>();
 
-		while ( i < (start + size) && i < asset.size() ) {
+		while (i < (start + size) && i < asset.size()) {
 			tampung.add(asset.get(i));
 			i++;
 		}
@@ -121,21 +120,27 @@ public class FirstApplication {
 
 	@PostMapping("/assets")
 	public ResponseEntity<List<CreateAssetResponse>> createAsset(
-		@RequestBody CreateAssetResponse request){
+			@RequestBody CreateAssetResponse request) {
 
 		//init data
-		List<CreateAssetResponse> users = new ArrayList<>();
+		List<CreateAssetResponse> asset = new ArrayList<>();
 
 		// mock data
-		users.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").build());
-		users.add(CreateAssetResponse.builder().id(2L).name("CD").type("type1").build());
+		asset.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").build());
+		asset.add(CreateAssetResponse.builder().id(2L).name("CD").type("type2").build());
 
 		//add new user
-		users.add(
+		asset.add(
 				CreateAssetResponse.builder().id(request.getId()).name(request.getName()).type(request.getType()).build()
 		);
 
 		//return response
-		return new ResponseEntity<>(users, HttpStatus.OK);
+		return new ResponseEntity<>(asset, HttpStatus.OK);
 	}
+
+//	@PostMapping("/employee")
+//	public ResponseEntity<List<CreateAssetResponse>> createAsset(
+//			@RequestBody CreateAssetResponse request){
+//
+//	}
 }
