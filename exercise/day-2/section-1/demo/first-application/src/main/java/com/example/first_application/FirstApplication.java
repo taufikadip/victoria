@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -19,14 +21,13 @@ public class FirstApplication {
 		}
 
 	@GetMapping
-	public GetAssetResponse sayHello(){
-		var response = GetAssetResponse.builder().id(1L).name("Asset1").build();
-
-		response.setName("AMAN");
-
-		response.getName();
-
-		return response;
+	public ArrayList<GetAssetResponse> getAssets(){
+		ArrayList<GetAssetResponse> list = new ArrayList<>();
+		GetAssetResponse asset1 = new GetAssetResponse(1L,"Karta","type1");
+		GetAssetResponse asset2 = new GetAssetResponse(2L,"Kevin","type2");
+		list.add(asset1);
+		list.add(asset2);
+		return list;
 	}
 
 	@GetMapping("/users")
