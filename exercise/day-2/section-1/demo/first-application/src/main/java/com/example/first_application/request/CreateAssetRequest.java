@@ -10,12 +10,18 @@ import lombok.Setter;
 @Setter
 public class CreateAssetRequest {
 
-    @JsonProperty("id")
-    private Long id;
+//    @JsonProperty("id")
+//    private Long id;
 
     @JsonProperty("name")
     private String name;
 
     @JsonProperty("type")
     private String type;
+
+    @JsonProperty("address")
+    private String address;
+
+    @JsonProperty("phone")
+    private Long phone;
 }

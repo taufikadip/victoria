@@ -118,7 +118,35 @@ public class FirstApplication {
 //		}
 	}
 
-	@PostMapping("/assets")
+//	@PostMapping("/assets")
+//	public ResponseEntity<List<CreateAssetResponse>> createAsset(
+//			@RequestBody CreateAssetResponse request) {
+//
+//		//init data
+//		List<CreateAssetResponse> asset = new ArrayList<>();
+//
+//		// mock data
+//		asset.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").build());
+//		asset.add(CreateAssetResponse.builder().id(2L).name("CD").type("type2").build());
+//
+//		//add new user
+//		asset.add(
+//				CreateAssetResponse.builder().id(request.getId()).name(request.getName()).type(request.getType()).build()
+//		);
+//
+//		//return response
+//		return new ResponseEntity<>(asset, HttpStatus.OK);
+//	}
+
+	// url/employee
+	// create employee
+	// id (generate by system)
+	// name
+	// age
+	// address (nullable)
+	// phone
+
+	@PostMapping("/employee")
 	public ResponseEntity<List<CreateAssetResponse>> createAsset(
 			@RequestBody CreateAssetResponse request) {
 
@@ -126,21 +154,20 @@ public class FirstApplication {
 		List<CreateAssetResponse> asset = new ArrayList<>();
 
 		// mock data
-		asset.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").build());
-		asset.add(CreateAssetResponse.builder().id(2L).name("CD").type("type2").build());
+		asset.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").address("bintaro").phone(123456L).build());
+		asset.add(CreateAssetResponse.builder().id(2L).name("CD").type("type2").address("bintaro").phone(456789L).build());
+		asset.add(CreateAssetResponse.builder().id(3L).name("CD").type("type2").address("bintaro").phone(456789L).build());
 
-		//add new user
+		//buat id untuk generate
+		int end = asset.size() - 1;
+
+
+		//add new asset
 		asset.add(
-				CreateAssetResponse.builder().id(request.getId()).name(request.getName()).type(request.getType()).build()
+				CreateAssetResponse.builder().id(asset.get(end).getId() + 1).name(request.getName()).type(request.getType()).address(request.getAddress()).phone(request.getPhone()).build()
 		);
 
 		//return response
 		return new ResponseEntity<>(asset, HttpStatus.OK);
 	}
-
-//	@PostMapping("/employee")
-//	public ResponseEntity<List<CreateAssetResponse>> createAsset(
-//			@RequestBody CreateAssetResponse request){
-//
-//	}
 }

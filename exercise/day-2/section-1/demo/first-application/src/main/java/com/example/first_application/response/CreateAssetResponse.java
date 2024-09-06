@@ -18,4 +18,10 @@ public class CreateAssetResponse {
 
     @JsonProperty("type")
     private String type;
+
+    @JsonProperty("address")
+    private String address;
+
+    @JsonProperty("phone")
+    private Long phone;
 }
