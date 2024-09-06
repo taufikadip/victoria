@@ -5,6 +5,7 @@ import lombok.Builder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.reflect.Array;
@@ -21,19 +22,44 @@ public class FirstApplication {
 		}
 
 	@GetMapping
-	public ArrayList<GetAssetResponse> getAssets(){
-		ArrayList<GetAssetResponse> list = new ArrayList<>();
-		GetAssetResponse asset1 = new GetAssetResponse(1L,"Karta","type1");
-		GetAssetResponse asset2 = new GetAssetResponse(2L,"Kevin","type2");
-		list.add(asset1);
-		list.add(asset2);
-		return list;
-	}
+//	public ArrayList<GetAssetResponse> getAssets(){
+//		ArrayList<GetAssetResponse> list = new ArrayList<>();
+//		asset.add(GetAssetResponse).builder().
+//		GetAssetResponse asset1 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
+//		GetAssetResponse asset2 = GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build();
+//		list.add(asset1);
+//		list.add(asset2);
+//		return list;
+//	}
 
 	@GetMapping("/users")
 	public List<String> getUser(){
 		return List.of("Karta", "Kevin", "Bram");
 	}
+
+	@GetMapping("/assets/{id}")
+	public GetAssetResponse getAssetbyId(
+			@PathVariable Long id
+
+	) {
+		List<GetAssetResponse> asset = new ArrayList<>();
+		asset.add(GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build());
+		asset.add(GetAssetResponse.builder().id(2L).name("John Doe 2").type("Laki laki").build());
+		asset.add(GetAssetResponse.builder().id(3L).name("John Doe 3").type("Laki laki").build());
+		asset.add(GetAssetResponse.builder().id(4L).name("John Doe 4").type("Laki laki").build());
+		for (int i = 0; i < asset.size(); i++){
+			if (asset.get(i).getId().equals(id)){
+				return asset.get(i);
+			}
+		}
+		return null;
+	}
+//	public GetAssetResponse getAssetbyId(
+//			PathVariable Long id
+//	){
+//		return GetAssetResponse.builder().id(1L);
+//	}
+//	)
 
 //	@GetMapping("/users/{id}")
 //	public ResponseEntityLong
