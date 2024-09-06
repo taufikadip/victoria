@@ -1,5 +1,7 @@
 package com.example.first_application;
 
+import com.example.first_application.request.CreateAssetRequest;
+import com.example.first_application.request.UpdateAssetRequest;
 import com.example.first_application.response.CreateAssetResponse;
 import com.example.first_application.response.GetAssetResponse;
 import lombok.Builder;
@@ -146,28 +148,58 @@ public class FirstApplication {
 	// address (nullable)
 	// phone
 
-	@PostMapping("/employee")
+//	@PostMapping("/employee")
+//	public ResponseEntity<List<CreateAssetResponse>> createAsset(
+//			@RequestBody CreateAssetResponse request) {
+//
+//		//init data
+//		List<CreateAssetResponse> asset = new ArrayList<>();
+//
+//		// mock data
+//		asset.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").address("bintaro").phone(123456L).build());
+//		asset.add(CreateAssetResponse.builder().id(2L).name("CD").type("type2").address("bintaro").phone(456789L).build());
+//		asset.add(CreateAssetResponse.builder().id(3L).name("CD").type("type2").address("bintaro").phone(456789L).build());
+//
+//		//buat id untuk generate
+//		int end = asset.size() - 1;
+//
+//		//add new asset
+//		if (request.getName() != null && request.getType() != null && request.getPhone() != null) {
+//			asset.add(
+//					CreateAssetResponse.builder().id(asset.get(end).getId() + 1).name(request.getName()).type(request.getType()).address(request.getAddress()).phone(request.getPhone()).build()
+//			);
+//		}
+//
+//		//return response
+//		return new ResponseEntity<>(asset, HttpStatus.OK);
+//	}
+
+	//buat list untuk menampung data
+	private List<CreateAssetResponse> assets = new ArrayList<>();
+
+	@PatchMapping("/assets")
 	public ResponseEntity<List<CreateAssetResponse>> createAsset(
-			@RequestBody CreateAssetResponse request) {
+			@RequestBody CreateAssetRequest request) {
 
-		//init data
-		List<CreateAssetResponse> asset = new ArrayList<>();
-
-		// mock data
-		asset.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").address("bintaro").phone(123456L).build());
-		asset.add(CreateAssetResponse.builder().id(2L).name("CD").type("type2").address("bintaro").phone(456789L).build());
-		asset.add(CreateAssetResponse.builder().id(3L).name("CD").type("type2").address("bintaro").phone(456789L).build());
-
-		//buat id untuk generate
-		int end = asset.size() - 1;
-
-
-		//add new asset
-		asset.add(
-				CreateAssetResponse.builder().id(asset.get(end).getId() + 1).name(request.getName()).type(request.getType()).address(request.getAddress()).phone(request.getPhone()).build()
-		);
+		assets.add(CreateAssetResponse.builder().id((long) assets.size()+1).name(request.getName()).build());
 
 		//return response
-		return new ResponseEntity<>(asset, HttpStatus.OK);
+		return new ResponseEntity<>(assets, HttpStatus.OK);
+	}
+
+	@PatchMapping("/assets/{id}")
+	public ResponseEntity<List<CreateAssetResponse>> updateAsset(
+			@RequestBody UpdateAssetRequest request,
+			@PathVariable("id") Long id) {
+
+		//check
+		for (CreateAssetResponse asset : assets) {
+			if (asset.getId()==id){
+				asset.setName(request.getName());
+			}
+		}
+
+		//return response
+		return new ResponseEntity<>(assets, HttpStatus.OK);
 	}
 }
