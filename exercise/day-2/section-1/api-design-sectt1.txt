@@ -1,0 +1,68 @@
+Asset property
+{
+    "id";
+    "name";
+    "type";
+    "isAvailable";
+}
+
+Create
+
+- post asset by id
+URl: /assets
+Method: POST
+request:
+{
+    "name"; "asset1",
+    "type"; "car"
+    "isAvailable"; true,
+}
+response:
+{
+    "status code" 201;
+}
+
+Read
+
+- get asset by id
+URl: /assets
+Method: GET
+response:
+{
+    "id"; 1,
+    "name"; "asset1",
+    "type"; "car"
+    "isAvailable"; true,
+}
+
+Update
+
+- update asset by id
+URl: /assets
+Method: PUT
+request:
+{
+    "name";
+    "type";
+    "isAvailable";
+}
+response:
+{
+    "status code" 200;
+}
+
+Delete
+
+- delete asset by id
+URl: /assets
+Method: DELETE
+request:
+{
+    "name";
+    "type";
+    "isAvailable";
+}
+response:
+{
+    "status code" 200;
+}

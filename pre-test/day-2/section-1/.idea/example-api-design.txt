@@ -1,0 +1,3 @@
+
+- get user by id
+URl: /users
