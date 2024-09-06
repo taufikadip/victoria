@@ -1,13 +1,13 @@
 package com.example.first_application;
 
+import com.example.first_application.response.CreateAssetResponse;
 import com.example.first_application.response.GetAssetResponse;
 import lombok.Builder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -111,10 +111,31 @@ public class FirstApplication {
 			i++;
 		}
 		return tampung;
+
 //		for (GetAssetResponse getAssetResponse : asset){
 ////			if (getAssetResponse.getId() >= id ) {
 ////				list.add(getAssetResponse);
 ////			}
 //		}
+	}
+
+	@PostMapping("/assets")
+	public ResponseEntity<List<CreateAssetResponse>> createAsset(
+		@RequestBody CreateAssetResponse request){
+
+		//init data
+		List<CreateAssetResponse> users = new ArrayList<>();
+
+		// mock data
+		users.add(CreateAssetResponse.builder().id(1L).name("AB").type("type1").build());
+		users.add(CreateAssetResponse.builder().id(2L).name("CD").type("type1").build());
+
+		//add new user
+		users.add(
+				CreateAssetResponse.builder().id(request.getId()).name(request.getName()).type(request.getType()).build()
+		);
+
+		//return response
+		return new ResponseEntity<>(users, HttpStatus.OK);
 	}
 }
