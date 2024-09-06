@@ -25,7 +25,7 @@ response:
 Read
 
 - get asset by id
-URl: /assets
+URl: /assets/1
 Method: GET
 response:
 {
@@ -38,7 +38,7 @@ response:
 Update
 
 - update asset by id
-URl: /assets
+URl: /assets/1
 Method: PUT
 request:
 {
@@ -54,7 +54,7 @@ response:
 Delete
 
 - delete asset by id
-URl: /assets
+URl: /assets/1
 Method: DELETE
 request:
 {
