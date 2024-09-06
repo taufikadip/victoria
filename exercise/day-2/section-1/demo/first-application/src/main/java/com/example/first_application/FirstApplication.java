@@ -43,30 +43,31 @@ public class FirstApplication {
 //
 //	)
 
-	@GetMapping("/assets/{id}")
-	public ArrayList<GetAssetResponse> getAssetbyId(
-			@PathVariable Long id
-	)
-	{
-		ArrayList<GetAssetResponse> list = new ArrayList<>();
-		List<GetAssetResponse> asset = new ArrayList<>();
-		asset.add(GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build());
-		asset.add(GetAssetResponse.builder().id(2L).name("John Doe 2").type("Laki laki").build());
-		asset.add(GetAssetResponse.builder().id(3L).name("John Doe 3").type("Laki laki").build());
-		asset.add(GetAssetResponse.builder().id(4L).name("John Doe 4").type("Laki laki").build());
-		asset.add(GetAssetResponse.builder().id(5L).name("John Doe 5").type("Laki laki").build());
-//		for (int i = 0; i < asset.size(); i++){
-//			if (asset.get(i).getId().equals(id)){
-//				return asset.get(i);
+	// Print yang diatas id
+//	@GetMapping("/assets/{id}")
+//	public ArrayList<GetAssetResponse> getAssetbyId(
+//			@PathVariable Long id
+//	)
+//	{
+//		ArrayList<GetAssetResponse> list = new ArrayList<>();
+//		List<GetAssetResponse> asset = new ArrayList<>();
+//		asset.add(GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build());
+//		asset.add(GetAssetResponse.builder().id(2L).name("John Doe 2").type("Laki laki").build());
+//		asset.add(GetAssetResponse.builder().id(3L).name("John Doe 3").type("Laki laki").build());
+//		asset.add(GetAssetResponse.builder().id(4L).name("John Doe 4").type("Laki laki").build());
+//		asset.add(GetAssetResponse.builder().id(5L).name("John Doe 5").type("Laki laki").build());
+////		for (int i = 0; i < asset.size(); i++){
+////			if (asset.get(i).getId().equals(id)){
+////				return asset.get(i);
+////			}
+////		}
+//		for (GetAssetResponse getAssetResponse : asset){
+//			if (getAssetResponse.getId() >= id ) {
+//				list.add(getAssetResponse);
 //			}
 //		}
-		for (GetAssetResponse getAssetResponse : asset){
-			if (getAssetResponse.getId() >= id ) {
-				list.add(getAssetResponse);
-			}
-		}
-		return list;
-	}
+//		return list;
+//	}
 
 //	@GetMapping("/calculator/add")
 //	public String getAdd(
@@ -85,4 +86,35 @@ public class FirstApplication {
 
 //	@GetMapping("/users/{id}")
 //	public ResponseEntityLong
+
+	@GetMapping("/assets/add")
+	public List<GetAssetResponse> getAssetbyId(
+//			@PathVariable Long id,
+			@RequestParam(name = "page", defaultValue = "1") int page,
+			@RequestParam(name = "size", defaultValue = "1") int size
+//			@RequestParam(name = "lebar", required = false) int lebar
+	)
+	{
+		List<GetAssetResponse> asset = new ArrayList<>();
+		asset.add(GetAssetResponse.builder().id(1L).name("John Doe 1").type("Laki laki").build());
+		asset.add(GetAssetResponse.builder().id(2L).name("John Doe 2").type("Laki laki").build());
+		asset.add(GetAssetResponse.builder().id(3L).name("John Doe 3").type("Laki laki").build());
+		asset.add(GetAssetResponse.builder().id(4L).name("John Doe 4").type("Laki laki").build());
+		asset.add(GetAssetResponse.builder().id(5L).name("John Doe 5").type("Laki laki").build());
+
+		int i = ((page-1) * size);
+		int start = i;
+		List<GetAssetResponse> tampung = new ArrayList<>();
+
+		while ( i < (start + size) && i < asset.size() ) {
+			tampung.add(asset.get(i));
+			i++;
+		}
+		return tampung;
+//		for (GetAssetResponse getAssetResponse : asset){
+////			if (getAssetResponse.getId() >= id ) {
+////				list.add(getAssetResponse);
+////			}
+//		}
+	}
 }
