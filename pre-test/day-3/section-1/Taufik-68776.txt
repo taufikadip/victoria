@@ -1,0 +1,50 @@
+1. B
+2. B
+3. B
+4. False
+5. A
+6. B
+7. True
+8. C
+9. C
+10. D
+11. B
+12. False
+13. D
+14. B
+15. A
+16. True
+17. C
+18. B
+19. False
+20. A
+21. B
+22. C
+23. B
+24. B
+25. False
+26. B
+27. C
+28. SELECT * FROM books
+29. B
+30. C
+
+1. SELECT title FROM books AS a
+    JOIN authors AS b
+     JOIN genres as c
+     ON a.id = b.id = c.id
+     WHERE genre = Mistery or genre = Thriller
+
+2. SELECT name FROM borrowers GROUP BY
+
+3.
+
+4.
+
+5. SELECT id FROM borrowers LEFT JOIN borrower_id ON borrowed_books OREDER BY books.name
+
+6.
+
+7.
+
+8.
