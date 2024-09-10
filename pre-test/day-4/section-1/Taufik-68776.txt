@@ -1,0 +1,39 @@
+1. B
+2. A
+3. B
+4. A
+5. B
+6. E
+7. A
+8. B
+9. C
+10. D
+
+11. refresh token menghasilkan access token JWT baru lainnya
+    ketika habis masa berlakunya atau bahkan lebih awal.
+
+12. Penting untuk melakukan enskripsi pada password supaya password
+    yang disimpan tidak mudah terlihat ataupun diambil melalui tempat lain.
+
+13. dengan menggunakan dependency OAuth2 Resource Sever dan dependency
+    JWT, lalu mengkonfigurasi class credentialnya mulai dari repository.
+
+14. OAuth2 adalah framework protokol Authorisasi untuk springboot.
+
+15. CORS digunakan untuk mengatur bagaimana data atau source yang ada
+    di halaman web server dapat diakses melalui halaman / domain lain.
+
+16. Kita dapat menambahkan anotasi @CrossOrigin ke method handler
+    beranotasi @RequestMapping untuk mengaktifkan CORS di dalamnya.
+    Secara default @CrossOrigin mengizinkan semua source dan method
+    HTTP yang ditentukan dalam anotasi @RequestMapping
+
+17. cyberattack yang menyerang session management system untuk menyerang session user sebenarnya.
+
+18.
+
+19. Broken access control, SQL Injection, CSRF.
+
+20. Penting untuk mengetahui potensi ancaman dari library ataupun framework
+    untuk di Spring dapat menngunakan whitebox testing seperti Static Application Security Testing
+    contohnya sistem akan terlihat projek yang berbahaya karena menggunakan dependensi yang sudah lama.
