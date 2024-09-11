@@ -1,0 +1,65 @@
+1. B
+2. A
+3. D
+4. A
+5. D
+
+6. False
+7. True
+8. True
+9. False
+10. False
+
+11. untuk berhubungan dengan client dan memetakan mapping
+
+12. Service layer berhubungan dengan Repository dengan memanggil methode yang ada di Repository untuk mengakses database.
+
+13. (mulai dari atas)
+    - Controller
+    package yang berisi fungsi untuk memetakan mapping dan berhubungan dengan request dari client
+    - Service
+    service berisi interface yang berfungsi untuk menyatakan (agreement) fungsi apa yang dapat dijalankan pada service tersebut
+        - Service Implementation
+        package yang berisi implementasi bisnis yang sudah di deklarasikan di service
+        serta berisi logika business dari program
+    - Repository
+    package yang berfungsi untuk menyambungkan request dari service ke database dan mengakses database
+    - Entity
+    package yang berisi kelas yang isinya menyerupai database untuk merepresentasikan datanya
+
+14. package yang berfungsi untuk menyambungkan program beserta request ke database dan mengakses database
+
+15. explicit type casting adalah proses mengubah tipe data secara langsung pada baris kode yang sama
+    sedangkan implicit type casting mengubah tipe data secara tidak langsung
+
+16. implement JWT, pertama dengan generate JWT toen
+    kemudian memvalidasi JWT token untuk menjaga API endpoints
+    kemudian implementasi fungsi logout dengan invalidate token.
+    kemudian handle token dengan menggunakan refresh token supaya token tidak bisa terus digunakan.
+
+17.
+
+18. untuk memvalidasi apakah value yang diinginkan (expected value)
+    sesuai dengan value actual dari source (actual value)
+
+19. dengan membuat kelas di package service untuk memvalidasi akses user yang akan masuk
+
+20. anotasinya menggunakan @Service dan service class di dalam package service bersama dengan service implementation
+
+21. service berisi interface yang berfungsi untuk menyatakan (agreement) fungsi apa yang dapat dijalankan pada service tersebut
+    dan mengimplementasikannya pada service implements untuk berkomunikas dengan Repository.
+
+22.
+
+23. @RequestMaping digunakan untuk memberikan mapping yang dinginkan misalnya "/api/class"
+
+24.
+
+25. Membuat sebuah fungsi ProductNotFoundException:
+    Membuat sebuah Product Service:
+    Membuat sebuah Global Exception Handler:
+    Membuat sebuah Custom Error Response Class:
+    Controller melakukan fetch Product:
+    kemudian testing the Exception Handling:
+    Controller Method Execution:
+    Exception Occurs:
